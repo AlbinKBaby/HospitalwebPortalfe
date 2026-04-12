@@ -1,0 +1,160 @@
+.home {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Banner Section */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--accent-bg), var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  color: var(--text-h);
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: center;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Description Section */
+.description {
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg);
+}
+
+.description h2 {
+  font-size: 2.5rem;
+  color: var(--text-h);
+  margin-bottom: 1rem;
+}
+
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tests Section */
+.tests-section {
+  padding: 2rem;
+  background: var(--accent-bg);
+}
+
+.tests-section h2 {
+  font-size: 2.5rem;
+  color: var(--text-h);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.test-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.test-card:hover {
+  transform: translateY(-5px);
+}
+
+.test-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-h);
+  margin-bottom: 0.5rem;
+}
+
+.test-card .category {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.test-card .description {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.test-card .price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--text-h);
+  margin-bottom: 0.5rem;
+}
+
+.test-card .status {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.status.available {
+  color: green;
+}
+
+.status.limited-availability {
+  color: orange;
+}
+
+.test-card .date {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .tests-grid {
+    grid-template-columns: 1fr;
+  }
+}

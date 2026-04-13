@@ -92,7 +92,7 @@ function Home() {
           </p>
         </div>
         <div className="banner-image">
-          <img src="https://via.placeholder.com/600x400?text=Hospital+Banner" alt="Hospital Banner" />
+          <img src="https://img.freepik.com/premium-vector/hospital-ads-banner-design-template-social-media-post-design_601059-331.jpg" alt="Hospital Banner" />
         </div>
       </section>
 

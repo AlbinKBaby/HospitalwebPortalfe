@@ -6,20 +6,39 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically handle login logic
-    console.log('Login attempt:', { username, password });
-    // For now, just navigate back to home or to admin/supervisor based on role
-    // This is mock logic
-    if (username === 'admin') {
-      navigate('/admin');
-    } else if (username === 'supervisor') {
-      navigate('/supervisor');
-    } else {
-      navigate('/');
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:4005/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message);
+      return;
     }
-  };
+
+    // ✅ Store token
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('role', data.role);
+
+    // ✅ Redirect based on role
+    if (data.role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate('/supervisor');
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Login failed");
+  }
+};
 
   return (
     <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>

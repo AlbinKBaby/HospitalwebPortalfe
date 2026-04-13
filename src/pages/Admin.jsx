@@ -190,7 +190,7 @@ function Admin() {
     <div style={{ padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
       {/* Header */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '10px 0', borderBottom: '1px solid #dee2e6' }}>
-        <h1>Admin Dashboard - Medical Test Management</h1>
+        <h2>Admin Dashboard - Medical Test Management</h2>
         <Link to="/">
           <button style={{ padding: '8px 16px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
             Back to Home

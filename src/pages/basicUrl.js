@@ -1,1 +1,1 @@
-basicUrl = "https://hospitalwebportalbe.onrender.com";
+export basicUrl = "https://hospitalwebportalbe.onrender.com";

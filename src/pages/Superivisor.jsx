@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import basicUrl from './basicUrl';
 
 function Supervisor() {
   const [tests, setTests] = useState([]);
@@ -18,7 +19,7 @@ function Supervisor() {
   const fetchMedicalTests = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4005/medical-tests');
+      const response = await fetch(`${basicUrl}/medical-tests`);
       if (!response.ok) {
         throw new Error('Failed to fetch medical tests');
       }
@@ -35,7 +36,7 @@ function Supervisor() {
 
   const approveMedicalTest = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4005/medical-tests/${id}/approve`, {
+      const response = await fetch(`${basicUrl}/medical-tests/${id}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +57,7 @@ function Supervisor() {
 
   const rejectMedicalTest = async (id, reason) => {
     try {
-      const response = await fetch(`http://localhost:4005/medical-tests/${id}/reject`, {
+      const response = await fetch(`${basicUrl}/medical-tests/${id}/reject`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

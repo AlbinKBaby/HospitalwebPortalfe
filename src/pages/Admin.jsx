@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import basicUrl from './basicUrl';
 
 function Admin() {
   const [tests, setTests] = useState([]);
@@ -27,7 +28,7 @@ function Admin() {
   const fetchMedicalTests = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4005/medical-tests');
+      const response = await fetch(`${basicUrl}/medical-tests`);
       if (!response.ok) {
         throw new Error('Failed to fetch medical tests');
       }
@@ -44,7 +45,7 @@ function Admin() {
 
   const addMedicalTest = async (testData) => {
     try {
-      const response = await fetch('http://localhost:4005/medical-tests', {
+      const response = await fetch(`${basicUrl}/medical-tests`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +66,7 @@ function Admin() {
 
   const updateMedicalTest = async (id, testData) => {
     try {
-      const response = await fetch(`http://localhost:4005/medical-tests/${id}`, {
+      const response = await fetch(`${basicUrl}/medical-tests/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +87,7 @@ function Admin() {
 
   const deleteMedicalTest = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4005/medical-tests/${id}`, {
+      const response = await fetch(`${basicUrl}/medical-tests/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {

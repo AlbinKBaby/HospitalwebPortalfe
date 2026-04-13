@@ -1,0 +1,1 @@
+basicUrl = "https://hospitalwebportalbe.onrender.com";

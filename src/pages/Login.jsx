@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import basicUrl from './basicUrl';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -10,7 +11,7 @@ function Login() {
   e.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:4005/login', {
+    const response = await fetch(`${basicUrl}/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })

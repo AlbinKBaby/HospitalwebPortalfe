@@ -1,1 +1,2 @@
-export basicUrl = "https://hospitalwebportalbe.onrender.com";
+const basicUrl = "https://hospitalwebportalbe.onrender.com";
+export default basicUrl;

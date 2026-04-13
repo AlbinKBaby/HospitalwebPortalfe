@@ -1,2 +1,2 @@
-const basicurl = "https://hospitalwebportalbe.onrender.com";
+const basicurl = "http://localhost:4005";
 export default basicurl;
